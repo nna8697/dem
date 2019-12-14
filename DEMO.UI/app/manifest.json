@@ -1,0 +1,81 @@
+{
+  "_version": "1.69.0",
+  "sap.app": {
+    "id": "qlhs",
+    "type": "application",
+    "i18n": "i18n/global.properties",
+    "applicationVersion": {
+      "version": "1.0.0"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "rootView": {
+      "viewName": "app.masterPage",
+      "type": "XML",
+      "async": true,
+      "id": "app.masterPage"
+    },
+    "dependencies": {
+      "minUI5Version": "1.64.0",
+      "libs": {
+        "sap.m": {},
+        "sap.f": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+
+    "resources": {
+      "css": [
+        {
+
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "viewPath": "app",
+        "controlId": "appContent",
+        "controlAggregation": "pages",
+        "clearTarget": false,
+        "async": true
+      },
+      "routes": [
+        {
+          "pattern": "",
+          "name": "homepage",
+          "target": "homepage"
+        },
+        {
+          "pattern": "test",
+          "name": "test",
+          "target": "test"
+        }
+      ],
+      "targets": {
+        "homepage": {
+          "viewId": "homepage",
+          "viewName": "Student.Layout"
+        },
+        "test": {
+          "viewId": "test",
+          "viewName": "test.test",
+          "controlId": "appContent",
+          "viewLevel": 2
+        }
+      }
+    }
+  }
+}

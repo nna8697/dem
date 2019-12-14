@@ -1,0 +1,79 @@
+﻿<mvc:View controllerName="app.Student.List" xmlns="sap.ui.table" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:m="sap.m" height="100%">
+  <m:Page showHeader="false" enableScrolling="false" class="sapUiContentPadding">
+    <m:content>
+      <Table visibleRowCountMode="Auto"
+             id="studentTable"
+             rows="{path: 'studentModel>/'}"
+             selectionMode="MultiToggle"
+             ariaLabelledBy="title"
+             rowActionCount="2"
+             cellClick="onCellClick"
+             rowSelectionChange="onRowSelectionChange">
+        <toolbar>
+          <m:Toolbar>
+            <m:Title text="Quản lý hoc sinh"></m:Title>
+            <m:ToolbarSpacer/>
+            <m:SearchField liveChange="onSearchTyping" width="auto"/>
+            <m:Button tooltip="Thêm thông tin cán bộ" type="Transparent" icon="sap-icon://add-document" press="onAddButtonPress" class="sapUiSmallMarginEnd"/>
+            <m:Button id="deleteButton" tooltip="Xóa" icon="sap-icon://delete" type="Transparent" visible="false" press="onDeleteButtonPress"/>
+            <m:MenuButton text="Sắp xếp" icon="sap-icon://sort" buttonMode="Split" width="auto">
+              <m:menu>
+                <m:Menu itemSelected="onMenuActionPress">
+                  <m:items>
+                    <m:MenuItem id="nameSort" icon="sap-icon://sort-ascending" text="Chức danh" press="nameSortPress"/>
+                    <m:MenuItem id="codeSort" icon="sap-icon://sort-ascending" text="Bậc hệ số" press="codeSortPress"/>           
+                  </m:items>
+                </m:Menu>
+              </m:menu>
+            </m:MenuButton>
+          </m:Toolbar>
+        </toolbar>
+        <columns>
+          <Column>
+            <m:Label text="Họ và tên" />
+            <template>
+              <m:Text text="{studentModel>Name}" wrapping="false"/>
+            </template>
+          </Column>
+          <Column>
+            <m:Label text="Ngày sinh" />
+            <template>
+              <m:Text text="{
+                        path: 'studentModel>DateOfBirth',
+                        type: 'sap.ui.model.type.DateTime',
+                        formatOptions: {
+                    source: {
+                    pattern: 'yyyy-MM-ddTHH:mm:ss',
+                    UTC: true
+                  },
+                          pattern: 'dd/MM/yyyy',
+                  UTC: false
+                        }
+                      }" />
+            </template>
+          </Column>
+          <Column>
+            <m:Label text="Dia  chi" />
+            <template>
+              <m:Text text="{studentModel>Address}" wrapping="false"/>
+            </template>
+          </Column>
+          <Column>
+            <m:Label text="Lop" />
+            <template>
+              <m:Text text="{studentModel>Class}" wrapping="false"/>
+            </template>
+          </Column>
+        </columns>
+        <rowActionTemplate>
+          <RowAction>
+            <items>
+              <RowActionItem text="Sửa" icon="sap-icon://edit" press="onOpenEditDetailPage"/>
+              <RowActionItem text="Xóa" icon="sap-icon://delete" press="onRowDelete"/>
+            </items>
+          </RowAction>
+        </rowActionTemplate>
+      </Table>
+    </m:content>
+  </m:Page>
+</mvc:View>

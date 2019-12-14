@@ -1,0 +1,117 @@
+﻿<mvc:View displayBlock="true" controllerName="app.Student.ChildPages.Detail" height="100%"
+   xmlns="sap.uxap"
+   xmlns:mvc="sap.ui.core.mvc"
+   xmlns:m="sap.m"
+   xmlns:f="sap.f"
+   xmlns:form="sap.ui.layout.form">
+
+  <ObjectPageLayout id="ObjectPageLayout"
+					 showTitleInHeaderContent="true"
+					alwaysShowContentHeader="false"
+					preserveHeaderStateOnScroll="false"
+					headerContentPinnable="true"
+					isChildPage="true"
+					upperCaseAnchorBar="false">
+    <headerTitle>
+      <ObjectPageDynamicHeaderTitle>
+        <!--<expandedHeading>
+          <m:Title text="{products>Name}" wrapping="true" class="sapUiSmallMarginEnd"/>
+        </expandedHeading>-->
+
+        <snappedHeading>
+          <m:FlexBox wrap="Wrap" fitContainer="true" alignItems="Center">
+            <m:FlexBox wrap="NoWrap" fitContainer="true" alignItems="Center" class="sapUiTinyMarginEnd">
+              <f:Avatar src="/app/images/logo.png" displaySize="S" displayShape="Square"/>
+              <m:Title text="{products>Name}" wrapping="true" class="sapUiTinyMarginEnd"/>
+            </m:FlexBox>
+          </m:FlexBox>
+        </snappedHeading>
+
+        <navigationActions>
+          <!--<m:OverflowToolbarButton type="Transparent" icon="sap-icon://full-screen" press="handleFullScreen" tooltip="Enter Full Screen Mode" visible="{= ${/actionButtonsInfo/midColumn/fullScreen} !== null }"/>
+          <m:OverflowToolbarButton type="Transparent" icon="sap-icon://exit-full-screen" press="handleExitFullScreen" tooltip="Exit Full Screen Mode" visible="{= ${/actionButtonsInfo/midColumn/exitFullScreen} !== null }"/>-->
+          <m:OverflowToolbarButton type="Transparent" icon="sap-icon://decline" press="handleClose"  tooltip="Close column" visible="{= ${/actionButtonsInfo/midColumn/closeColumn} !== null }"/>
+        </navigationActions>
+
+        <actions>
+          <!--<m:Button
+              text="Thêm phòng"
+              type="Emphasized"
+              press="showAddNewDepartment"/>-->
+        </actions>
+
+      </ObjectPageDynamicHeaderTitle>
+    </headerTitle>
+
+    <headerContent>
+
+    </headerContent>
+
+    <sections>
+      <ObjectPageSection title="Thông tin học sinh">
+        <subSections>
+          <ObjectPageSubSection>
+            <blocks>
+              <form:SimpleForm
+								maxContainerCols="2"
+								editable="false"
+								layout="ResponsiveGridLayout"
+								labelSpanL="12"
+								labelSpanM="12"
+								emptySpanL="0"
+								emptySpanM="0"
+								columnsL="1"
+								columnsM="1">
+                <form:content>
+                  <f:Avatar src="https://localhost:9900/Uploads/{studentModel>/ImagePath}" displaySize="XL" showBorder="true"/>
+                  <m:Label text="Tên hoc sinh"/>
+                  <m:Text text="{path:'studentModel>/Name'}"/>
+                  <m:Label text="Ngay thang nam sinh"/>
+                  <m:Text text="{
+                        path: 'studentModel>/DateOfBirth',
+                        type: 'sap.ui.model.type.DateTime',
+                        formatOptions: {
+                    source: {
+                    pattern: 'yyyy-MM-ddTHH:mm:ss',
+                    UTC: true
+                  },
+                          pattern: 'dd/MM/yyyy',
+                  UTC: false
+                        }
+                      }" />
+                  <m:Label text="Địa chỉ"/>
+                  <m:Text text="{path:'studentModel>/Address'}"/>
+                  <m:Label text="Lop"/>
+                  <m:Text text="{path:'studentModel>/Class'}"/>
+                </form:content>
+              </form:SimpleForm>
+            </blocks>
+          </ObjectPageSubSection>
+        </subSections>
+      </ObjectPageSection>
+
+      <ObjectPageSection title="Danh sách">
+        <!--<subSections>
+          <ObjectPageSubSection>
+            <blocks>
+              <m:Table id="suppliersTable"
+									 items="{departmentModel>/}" itemPress="handleItemPress">
+                <m:columns>
+                  <m:Column />
+                </m:columns>
+                <m:items>
+                  <m:ColumnListItem type="Navigation" >
+                    <m:cells>
+                      <m:ObjectIdentifier text="{departmentModel>TenPhongBan}" />
+                    </m:cells>
+                  </m:ColumnListItem>
+                </m:items>
+              </m:Table>
+            </blocks>
+          </ObjectPageSubSection>
+        </subSections>-->
+      </ObjectPageSection>
+    </sections>
+  </ObjectPageLayout>
+</mvc:View>
+

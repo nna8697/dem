@@ -1,0 +1,69 @@
+﻿<core:View height="100%"
+		   xmlns:core="sap.ui.core"
+		   xmlns="sap.m"
+		   xmlns:tnt="sap.tnt"
+       xmlns:mvc="sap.ui.core.mvc"
+		   controllerName="app.masterPage">
+  <tnt:ToolPage id="toolPage">
+    <tnt:header>
+      <tnt:ToolHeader>
+        <Button id="sideNavigationToggleButton"
+						icon="sap-icon://menu2"
+						type="Transparent"
+						press="onSideNavButtonPress">
+          <layoutData>
+            <OverflowToolbarLayoutData priority="NeverOverflow" />
+          </layoutData>
+        </Button>
+        <ToolbarSpacer width="20px" />
+        <Image src="/app/images/logo.png" height="32px" width="32px"></Image>
+        <tnt:ToolHeaderUtilitySeparator />
+        <ToolbarSpacer>
+          <layoutData>
+            <OverflowToolbarLayoutData priority="NeverOverflow" minWidth="20px" />
+          </layoutData>
+        </ToolbarSpacer>
+        <Button type="Transparent" icon="sap-icon://message-popup" tooltip="Thông báo" text="{summaryModel>/totalNotif}" press="onOpenNotitfication">
+          <layoutData>
+            <OverflowToolbarLayoutData priority="NeverOverflow" />
+          </layoutData>
+        </Button>
+        <Button type="Transparent" icon="sap-icon://log" tooltip="Đăng xuất" press="onSignoutClick">
+          <layoutData>
+            <OverflowToolbarLayoutData priority="NeverOverflow" />
+          </layoutData>
+        </Button>
+      </tnt:ToolHeader>
+    </tnt:header>
+    <tnt:sideContent>
+      <tnt:SideNavigation expanded="true" selectedKey="{/selectedKey}">
+        <tnt:NavigationList items="{path: '/navigation'}">
+          <tnt:NavigationListItem text="{title}"
+                      icon="{icon}"
+                      enabled="{enabled}"
+                      expanded="{expanded}"
+                      items="{items}"
+                      select="onItemSelect"
+                      key="{key}">
+            <tnt:items>
+              <tnt:NavigationListItem text="{TenLoaiDanhMuc}"
+                        key="{KyHieu}"
+                        enabled="{enabled}"
+                        select="onCategoryTypeSelect">
+              </tnt:NavigationListItem>
+            </tnt:items>
+          </tnt:NavigationListItem>
+        </tnt:NavigationList>
+        <tnt:fixedItem>
+          <tnt:NavigationList items="{/fixedNavigation}">
+            <tnt:NavigationListItem text="{title}" key="{key}" icon="{icon}">
+            </tnt:NavigationListItem>
+          </tnt:NavigationList>
+        </tnt:fixedItem>
+      </tnt:SideNavigation>
+    </tnt:sideContent>
+    <tnt:mainContents>
+      <App id="appContent" />
+    </tnt:mainContents>
+  </tnt:ToolPage>
+</core:View>

@@ -1,0 +1,55 @@
+﻿<core:View height="100%" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:f="sap.ui.layout.form" controllerName="app.Student.ChildPages.Edit">
+  <Page>
+    <customHeader>
+      <Toolbar design="Solid">
+        <Title text="{studentModel>/Name}" level="H4"/>
+        <ToolbarSpacer />
+        <Button icon="sap-icon://decline" tooltip="Đóng" press="closeDetailArea"/>
+      </Toolbar>
+    </customHeader>
+    <content>
+      <VBox class="sapUiSmallMargin">
+        <f:SimpleForm
+            editable="true"
+            layout="ResponsiveGridLayout"
+            labelSpanXL="3"
+            labelSpanL="3"
+            labelSpanM="3"
+            labelSpanS="12"
+            adjustLabelSpan="false"
+            emptySpanXL="0"
+            emptySpanL="0"
+            emptySpanM="0"
+            emptySpanS="0"
+            columnsXL="2"
+            columnsL="2"
+            columnsM="1"
+            singleContainerFullSize="true">
+          <f:content>
+            <Label text="Họ và tên"/>
+            <Input id="editname" value="{studentModel>/Name}" growing="true" maxLength="255"/>
+            <Label text="Ngày sinh" />
+
+            <DatePicker id="editdob" value="{path:'studentModel>/DateOfBirth', formatter: '.formatDateText'}" displayFormat="short" valueFormat="dd.MM.yyyy" placeholder="Enter Date..."/>
+            <Label text="Địa chỉ"/>
+            <Input id="editadr" value="{studentModel>/Address}" growing="true" maxLength="500"/>
+            <Label text="Lớp"/>
+            <Input id="editclass" value="{studentModel>/Class}" growing="true" maxLength="500"/>
+          </f:content>
+        </f:SimpleForm>
+      </VBox>
+      <VBox class="sapUiSmallMargin">
+
+      </VBox>
+    </content>
+    <footer>
+      <Toolbar active="true">
+        <content>
+          <ToolbarSpacer/>
+          <Button text="Hoàn tất" type="Transparent" icon="sap-icon://accept" press="onSaveButtonPress" />
+          <Button text="Hủy bỏ" type="Transparent" icon="sap-icon://cancel" press="onCancelButtonPress" />
+        </content>
+      </Toolbar>
+    </footer>
+  </Page>
+</core:View>

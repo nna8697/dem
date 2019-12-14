@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29306.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "Api\Api.csproj", "{822C1210-FA44-4DC5-9D05-8E81BC4838B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DEMO.UI", "DEMO.UI\DEMO.UI.csproj", "{5505E68B-407F-4789-9E8A-3F0C6B8FEFD8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DEMONHOMSO48", "DEMONHOMSO48\DEMONHOMSO48.csproj", "{61E6A7CA-6FB4-4322-B1CE-0013CD19B4E7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{822C1210-FA44-4DC5-9D05-8E81BC4838B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{822C1210-FA44-4DC5-9D05-8E81BC4838B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{822C1210-FA44-4DC5-9D05-8E81BC4838B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{822C1210-FA44-4DC5-9D05-8E81BC4838B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5505E68B-407F-4789-9E8A-3F0C6B8FEFD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5505E68B-407F-4789-9E8A-3F0C6B8FEFD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5505E68B-407F-4789-9E8A-3F0C6B8FEFD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5505E68B-407F-4789-9E8A-3F0C6B8FEFD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61E6A7CA-6FB4-4322-B1CE-0013CD19B4E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61E6A7CA-6FB4-4322-B1CE-0013CD19B4E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61E6A7CA-6FB4-4322-B1CE-0013CD19B4E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61E6A7CA-6FB4-4322-B1CE-0013CD19B4E7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4DC114D0-8F37-4051-A50C-BD16F803FC87}
+	EndGlobalSection
+EndGlobal

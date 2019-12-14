@@ -1,0 +1,22 @@
+﻿{
+  "selectedKey": "homepage",
+  "navigation": [
+    {
+      "title": "Quản lý thông tin",
+      "icon": "sap-icon://account",
+      "key": "homepage"
+    },
+    {
+      "title": "TEST",
+      "icon": "sap-icon://account",
+      "key": "test"
+    }
+  ],
+  "fixedNavigation": [
+    {
+      "title": "Cài đặt",
+      "icon": "sap-icon://settings",
+      "key": "setup"
+    }
+  ]
+}

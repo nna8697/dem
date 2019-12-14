@@ -1,0 +1,7 @@
+﻿<View xmlns="sap.f" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" controllerName="app.Student.Layout" height="100%">
+  <FlexibleColumnLayout id="MainLayout">
+    <beginColumnPages>
+      <mvc:XMLView id="BeginView" viewName="app.Student.List" />
+    </beginColumnPages>
+  </FlexibleColumnLayout>
+</View>
